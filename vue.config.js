@@ -8,13 +8,7 @@ const {
 const config = {
   //....
   configureWebpack: {
-    plugins: [
-      new UniAppWeappTailwindcssWebpackPluginV4({
-        onUpdate(file) {
-          console.log(file);
-        },
-      }),
-    ],
+    plugins: [new UniAppWeappTailwindcssWebpackPluginV4()],
   },
   //....
 };
