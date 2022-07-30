@@ -5,8 +5,10 @@
     - [新建一个`uni-app`项目](#新建一个uni-app项目)
     - [添加 `postcss.config.js`](#添加-postcssconfigjs)
     - [添加 `tailwind.config.js`](#添加-tailwindconfigjs)
-    - [`App.vue` 中添加](#appvue-中添加)
+    - [在 `App.vue` 中引入 `tailwindcss`](#在-appvue-中引入-tailwindcss)
+  - [HbuilderX 智能提示工具](#hbuilderx-智能提示工具)
   - [Related projects](#related-projects)
+    - [插件核心](#插件核心)
     - [CLI 工具](#cli-工具)
     - [模板 template](#模板-template)
     - [预设 tailwindcss preset](#预设-tailwindcss-preset)
@@ -30,6 +32,7 @@ node_modules
 然后我们 `npm init -y` 在项目根目录创建一个 `package.json`，并安装依赖：
 
 ```json
+{
   "devDependencies": {
     "@dcloudio/uni-cli-i18n": "^2.0.1-34920220630001",
     "@dcloudio/uni-cli-shared": "^2.0.1-34920220630001",
@@ -42,9 +45,11 @@ node_modules
     "weapp-tailwindcss-webpack-plugin": "^1.6.8",
     "webpack": "npm:webpack@webpack-4"
   }
+}
+
 ```
 
-这是一个 `vue2` 项目，所以这样安装，`vue3` 使用 `vite/webpack` 的有所不同。
+> 这是一个 `vue2` 项目，所以这样安装，`vue3` 使用 `vite/webpack` 的有所不同。
 
 然后添加 `vue.config.js` 文件，注册 `weapp-tailwindcss-webpack-plugin`:
 
@@ -69,7 +74,7 @@ module.exports = config;
 
 ### 添加 `postcss.config.js`
 
-这里我们和 `uni-app` 的 `cli` 项目保持一致，以免在 `merge options` 时遇到未知问题。
+这里我们和 `uni-app` 的 `cli` 项目保持一致，以免在 `merge options` 时遇到未知问题。(如果有更好的方法，欢迎提供建议)
 
 ```js
 const path = require("path");
@@ -109,7 +114,7 @@ module.exports = {
 
 这里特别注意，在声明所有路径时，必须声明为绝对路径!!!
 
-因为 `hbuilderx` 有一个奇葩的读取配置策略，如果不是绝对路径，会读取 `'\HBuilderX\plugins\uniapp-cli\'` 目录下的文件，这直接导致配置打不开，导致项目挂了。
+因为 `hbuilderx` 有这样一个读取配置的策略：如果目标目录是相对路径，就会读取 `'\HBuilderX\plugins\uniapp-cli\'` 目录下的文件，这直接导致配置找不到，导致项目无法启动。
 
 ### 添加 `tailwind.config.js`
 
@@ -143,7 +148,7 @@ module.exports = {
 
 同样，`content` 也必须为绝对路径。
 
-### `App.vue` 中添加
+### 在 `App.vue` 中引入 `tailwindcss`
 
 ```html
 <style lang="scss">
@@ -155,7 +160,17 @@ module.exports = {
 
 现在，你就可以在 `hbuilder` 中愉快的使用 `tailwindcss` 了！
 
+## HbuilderX 智能提示工具
+
+DCloud-HBuilderX团队提供了对应的插件，可以去 
+
+https://ext.dcloud.net.cn/plugin?id=8560 进行下载，即可产生智能提示。
+
 ## Related projects
+
+### 插件核心
+
+[weapp-tailwindcss-webpack-plugin](https://github.com/sonofmagic/weapp-tailwindcss-webpack-plugin) 提供转义功能，欢迎 `fork`/`star`
 
 ### CLI 工具
 
