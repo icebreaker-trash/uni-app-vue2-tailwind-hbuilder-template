@@ -10,12 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@dcloudio/uni-cli-i18n": "^2.0.1-34920220630001",
-    "@dcloudio/uni-cli-shared": "^2.0.1-34920220630001",
-    "@dcloudio/vue-cli-plugin-uni": "^2.0.1-34920220630001",
     "autoprefixer": "9",
     "postcss": "7",
-    "postcss-comment": "^2.0.0",
     "postcss-rem-to-responsive-pixel": "^5.1.3",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "weapp-tailwindcss-webpack-plugin": "^1.6.8",

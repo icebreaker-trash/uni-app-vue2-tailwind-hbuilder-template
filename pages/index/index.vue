@@ -5,7 +5,7 @@
       src="../../static/logo.png"
     ></image>
     <view>
-      <text class="text-6xl text-gray-800">{{title}} World</text>
+      <text class="text-[44px] text-gray-800">{{title}} World</text>
     </view>
     <view :class="[
       flag?'bg-red-900':'bg-[#fafa00]',

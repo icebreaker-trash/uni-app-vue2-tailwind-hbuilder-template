@@ -34,12 +34,8 @@ node_modules
 ```json
 {
   "devDependencies": {
-    "@dcloudio/uni-cli-i18n": "^2.0.1-34920220630001",
-    "@dcloudio/uni-cli-shared": "^2.0.1-34920220630001",
-    "@dcloudio/vue-cli-plugin-uni": "^2.0.1-34920220630001",
     "autoprefixer": "9",
     "postcss": "7",
-    "postcss-comment": "^2.0.0",
     "postcss-rem-to-responsive-pixel": "^5.1.3",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "weapp-tailwindcss-webpack-plugin": "^1.6.8",
@@ -54,6 +50,11 @@ node_modules
 然后添加 `vue.config.js` 文件，注册 `weapp-tailwindcss-webpack-plugin`:
 
 ```js
+// 为了 tailwindcss jit 开发时的热更新
+if (process.env.NODE_ENV === "development") {
+  process.env.TAILWIND_MODE = "watch";
+}
+
 const {
   UniAppWeappTailwindcssWebpackPluginV4,
 } = require("weapp-tailwindcss-webpack-plugin");
@@ -70,6 +71,7 @@ const config = {
 };
 
 module.exports = config;
+
 ```
 
 ### 添加 `postcss.config.js`
@@ -80,20 +82,7 @@ module.exports = config;
 const path = require("path");
 
 module.exports = {
-  parser: require("postcss-comment"),
   plugins: [
-    require("postcss-import")({
-      resolve(id, basedir, importOptions) {
-        if (id.startsWith("~@/")) {
-          return path.resolve(process.env.UNI_INPUT_DIR, id.substr(3));
-        } else if (id.startsWith("@/")) {
-          return path.resolve(process.env.UNI_INPUT_DIR, id.substr(2));
-        } else if (id.startsWith("/") && !id.startsWith("//")) {
-          return path.resolve(process.env.UNI_INPUT_DIR, id.substr(1));
-        }
-        return id;
-      },
-    }),
     require("autoprefixer")({
       remove: process.env.UNI_PLATFORM !== "h5",
     }),
@@ -106,10 +95,8 @@ module.exports = {
       propList: ["*"],
       transformUnit: "rpx",
     }),
-    require("@dcloudio/vue-cli-plugin-uni/packages/postcss"),
   ],
 };
-
 ```
 
 这里特别注意，在声明所有路径时，必须声明为绝对路径!!!
