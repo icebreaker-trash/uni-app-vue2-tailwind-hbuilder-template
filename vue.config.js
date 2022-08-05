@@ -1,11 +1,7 @@
 if (process.env.NODE_ENV === "development") {
   process.env.TAILWIND_MODE = "watch";
 }
-
-const isH5 = process.env.UNI_PLATFORM === "h5";
-const isApp = process.env.UNI_PLATFORM === "app";
-
-const WeappTailwindcssDisabled = isH5 || isApp;
+const { WeappTailwindcssDisabled } = require("./platform");
 
 const {
   UniAppWeappTailwindcssWebpackPluginV4,
