@@ -1,6 +1,7 @@
 # uni-app-vue2-tailwind-hbuilder-template
 
 - [uni-app-vue2-tailwind-hbuilder-template](#uni-app-vue2-tailwind-hbuilder-template)
+  - [使用方式](#使用方式)
   - [从 0 到 1 的搭建过程](#从-0-到-1-的搭建过程)
     - [新建一个`uni-app`项目](#新建一个uni-app项目)
     - [添加 `postcss.config.js`](#添加-postcssconfigjs)
@@ -16,6 +17,10 @@
 
 这是一个使用 `hbuilderx` + `uni-app` + `vue2` + `tailwind` 构建的小程序模板。可以直接在 `hbuilderx` 中导入运行。
 
+## 使用方式
+
+先在项目目录下，执行 `yarn` 进行安装，然后在 `hbuilderx` 中打开项目，进行运行和发布。
+
 ## 从 0 到 1 的搭建过程
 
 ### 新建一个`uni-app`项目
@@ -23,6 +28,7 @@
 在这个项目里，添加 `.gitignore`,`package.json`,`vue.config.js` 文件
 
 `.gitignore` 中，把 `node_modules`,`unpackage`,`.hbuilderx` 这一类不像被添加到 `git` 的添加进去。
+
 ```txt
 unpackage
 node_modules
@@ -157,9 +163,9 @@ module.exports = {
 
 ## HbuilderX 智能提示工具
 
-DCloud-HBuilderX团队提供了对应的插件，可以去 
+DCloud-HBuilderX团队提供了对应的插件，可以去
 
-https://ext.dcloud.net.cn/plugin?id=8560 进行下载，即可产生智能提示。
+<https://ext.dcloud.net.cn/plugin?id=8560> 进行下载，即可产生智能提示。
 
 ## Related projects
 
