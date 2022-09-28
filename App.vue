@@ -18,6 +18,6 @@ export default {
 @import "tailwindcss/utilities";
 
 page {
-	background-color: red;
+	background-color: gray;
 }
 </style>
