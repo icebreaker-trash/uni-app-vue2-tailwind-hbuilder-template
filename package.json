@@ -10,6 +10,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@dcloudio/uni-cli-i18n": "^2.0.1-36420220922001",
+    "@dcloudio/uni-cli-shared": "^2.0.1-36420220922001",
+    "@dcloudio/vue-cli-plugin-uni": "^2.0.1-36420220922001",
     "autoprefixer": "9",
     "postcss": "7",
     "postcss-rem-to-responsive-pixel": "^5.1.3",
