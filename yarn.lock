@@ -125,18 +125,18 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
-"@dcloudio/uni-cli-i18n@^2.0.1-36420220922001":
-  version "2.0.1-36420220922001"
-  resolved "https://registry.yarnpkg.com/@dcloudio/uni-cli-i18n/-/uni-cli-i18n-2.0.1-36420220922001.tgz#d65e0d2923e208068f4719ed3d12925782665019"
-  integrity sha512-XW0D1kgGf80u+wOfsuXzaQnxJBhWohc2mBJywv9O4K1U/M5BDdCOqZi2TCLONFBAbOyQU47Cu516mNOJnTK1mw==
+"@dcloudio/uni-cli-i18n@^2.0.1-36420220922003":
+  version "2.0.1-36420220922003"
+  resolved "https://registry.npmmirror.com/@dcloudio/uni-cli-i18n/-/uni-cli-i18n-2.0.1-36420220922003.tgz#80534f1e4d3c0964699a16a5b5f44ead8b57860b"
+  integrity sha512-zkjtekccFLA9RwQ7jUpDAMndFf05hl60d0wv2lgcPFtpEC5Z+Nwr9ou/hi5P9XPBLsgpxJueOPhXXmtU1s3dzw==
   dependencies:
     i18n "^0.13.3"
     os-locale-s-fix "^1.0.8-fix-1"
 
-"@dcloudio/uni-cli-shared@^2.0.1-36420220922001":
-  version "2.0.1-36420220922001"
-  resolved "https://registry.yarnpkg.com/@dcloudio/uni-cli-shared/-/uni-cli-shared-2.0.1-36420220922001.tgz#66efb57c7e6f2df12fbbad05ff03e73871a2c3f9"
-  integrity sha512-1Wia/j7dq5dVLa5JS10/ftAb7AJ9TRVub7FMyXsDkYeYbSw4b1bRHU69+NAqJ1X0DZdVed4drou3NL7f1wxI5g==
+"@dcloudio/uni-cli-shared@^2.0.1-36420220922003":
+  version "2.0.1-36420220922003"
+  resolved "https://registry.npmmirror.com/@dcloudio/uni-cli-shared/-/uni-cli-shared-2.0.1-36420220922003.tgz#e7f0bdf55f282fa112f2f91c628f04b6f78cba2b"
+  integrity sha512-cMR4lNv3SOZksof4ECXSPiqV7D16IiVL1RQmITxh+OzMkQnIgLJA5q+OaPy3rDJkiS0zZuZ9q87lYYpLKgOAuw==
   dependencies:
     escape-string-regexp "^4.0.0"
     glob-escape "^0.0.2"
@@ -144,17 +144,17 @@
     postcss-urlrewrite "^0.2.2"
     strip-json-comments "^2.0.1"
 
-"@dcloudio/uni-stat@^2.0.1-36420220922001":
-  version "2.0.1-36420220922001"
-  resolved "https://registry.yarnpkg.com/@dcloudio/uni-stat/-/uni-stat-2.0.1-36420220922001.tgz#a41262dd9098318f0fff2bfa2c3719469513096a"
-  integrity sha512-QyUlCtFUYM/LgEQk98+xyHDHWHXPDjdB84jAsDdiAAl1d/oHvav5FuwQiGLuLZFaJoVXzNAjZ0XBHUxBVQdq3A==
+"@dcloudio/uni-stat@^2.0.1-36420220922003":
+  version "2.0.1-36420220922003"
+  resolved "https://registry.npmmirror.com/@dcloudio/uni-stat/-/uni-stat-2.0.1-36420220922003.tgz#012e4a56ff7147aa3ee806de1da26b01b522b954"
+  integrity sha512-eUnDWClhKLS6RNVKby1FvelDyjQxVJjmpqfarQ6keWMxArHyf3v/BhdIFuoIQNufwWPw+hKd6vTxAz/jR794mw==
 
-"@dcloudio/vue-cli-plugin-uni@^2.0.1-36420220922001":
-  version "2.0.1-36420220922001"
-  resolved "https://registry.yarnpkg.com/@dcloudio/vue-cli-plugin-uni/-/vue-cli-plugin-uni-2.0.1-36420220922001.tgz#47bb4447b1b9aabda57bb43263b1ae53c7dc52bb"
-  integrity sha512-tfpnArWgv1vb1l04fYK7vL/zr4gB5wYsi0UtGI72kh+FQ/awB4JrBWNe2+FEQp9EiE8voW5Rj57fATqREnD2rA==
+"@dcloudio/vue-cli-plugin-uni@^2.0.1-36420220922003":
+  version "2.0.1-36420220922003"
+  resolved "https://registry.npmmirror.com/@dcloudio/vue-cli-plugin-uni/-/vue-cli-plugin-uni-2.0.1-36420220922003.tgz#f8bf5639565fec18e1e1d5ae76fa788fbef77ea4"
+  integrity sha512-vxkTZD77Qdc+c+bqhGf72VC35qfzyMqdQRlvm+2WM63fDdKNCXK/d0JOOvlScFHqpj9s4T8UTlLzzOu4wxY7TA==
   dependencies:
-    "@dcloudio/uni-stat" "^2.0.1-36420220922001"
+    "@dcloudio/uni-stat" "^2.0.1-36420220922003"
     buffer-json "^2.0.0"
     clone-deep "^4.0.1"
     cross-env "^5.2.0"
@@ -2655,6 +2655,15 @@ postcss@7, postcss@^7, postcss@^7.0.1, postcss@^7.0.18, postcss@^7.0.32:
     picocolors "^0.2.1"
     source-map "^0.6.1"
 
+postcss@8.4.16:
+  version "8.4.16"
+  resolved "https://registry.npmmirror.com/postcss/-/postcss-8.4.16.tgz#33a1d675fac39941f5f445db0de4db2b6e01d43c"
+  integrity sha512-ipHE1XBvKzm5xI7hiHCZJCSugxvsdq2mPnsq5+UF+VHCjiBvtDrlxJfMBToWaP9D5XlgNmcFGqoHmUn0EYEaRQ==
+  dependencies:
+    nanoid "^3.3.4"
+    picocolors "^1.0.0"
+    source-map-js "^1.0.2"
+
 postcss@^6.0.9:
   version "6.0.23"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.23.tgz#61c82cc328ac60e677645f979054eb98bc0e3324"
@@ -2668,15 +2677,6 @@ postcss@^8.3.5:
   version "8.4.14"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.14.tgz#ee9274d5622b4858c1007a74d76e42e56fd21caf"
   integrity sha512-E398TUmfAYFPBSdzgeieK2Y1+1cpdxJx8yXbK/m57nRhKSmk1GB2tO4lbLBtlkfPQTDKfe4Xqv1ASWPpayPEig==
-  dependencies:
-    nanoid "^3.3.4"
-    picocolors "^1.0.0"
-    source-map-js "^1.0.2"
-
-postcss@^8.4.16:
-  version "8.4.16"
-  resolved "https://registry.npmmirror.com/postcss/-/postcss-8.4.16.tgz#33a1d675fac39941f5f445db0de4db2b6e01d43c"
-  integrity sha512-ipHE1XBvKzm5xI7hiHCZJCSugxvsdq2mPnsq5+UF+VHCjiBvtDrlxJfMBToWaP9D5XlgNmcFGqoHmUn0EYEaRQ==
   dependencies:
     nanoid "^3.3.4"
     picocolors "^1.0.0"
@@ -3527,17 +3527,17 @@ watchpack@^1.7.4:
     chokidar "^3.4.1"
     watchpack-chokidar2 "^2.0.1"
 
-weapp-tailwindcss-webpack-plugin@^1.11.2:
-  version "1.11.2"
-  resolved "https://registry.npmmirror.com/weapp-tailwindcss-webpack-plugin/-/weapp-tailwindcss-webpack-plugin-1.11.2.tgz#10e16fcde153185bd9cf2ca73db7cf9140ca2c6b"
-  integrity sha512-o3919WTwGcXljZnizuczX+2Bj7m+/ovkxf038urSMa3Krej08hPbyIuQlb6DQYn/Z1Vd1578Awv7w1PDJV8bog==
+weapp-tailwindcss-webpack-plugin@^1.11.6:
+  version "1.11.6"
+  resolved "https://registry.npmmirror.com/weapp-tailwindcss-webpack-plugin/-/weapp-tailwindcss-webpack-plugin-1.11.6.tgz#9f1209823d0eea6ccd1895a2d94b7e78b30f535e"
+  integrity sha512-DlhYV93BirJC39feJLMVuWQEoZEOn0Ct2aXcTi54gnyV+hlb7AvqIyLrXt1pNu9VWCyItT+hvo5t+6+MGO+arA==
   dependencies:
     "@babel/generator" "7.19.3"
     "@babel/parser" "7.19.3"
     "@babel/traverse" "7.19.3"
     loader-utils "^2.0.2"
     micromatch "^4.0.5"
-    postcss "^8.4.16"
+    postcss "8.4.16"
     postcss-selector-parser "^6.0.10"
     webpack-sources "^3.2.3"
 
