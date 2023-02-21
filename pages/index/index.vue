@@ -1,6 +1,8 @@
 <template>
 	<view class="w-screen flex flex-col items-center">
 		<image class="w-12 h-12" src="../../static/logo.png"></image>
+		<navigator url="/pagesA/index">pagesA</navigator>
+		<navigator url="/pagesB/index">pagesB</navigator>
 		<view>
 			<text class="text-[44px] text-gray-800">{{title}} World</text>
 		</view>

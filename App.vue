@@ -17,7 +17,4 @@ export default {
 @import "tailwindcss/base";
 @import "tailwindcss/utilities";
 
-page {
-	background-color: gray;
-}
 </style>

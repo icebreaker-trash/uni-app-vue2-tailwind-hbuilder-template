@@ -12,6 +12,8 @@ module.exports = {
     content: [
       resolve("./index.html"),
       resolve("./pages/**/*.{vue,js,ts,jsx,tsx,wxml}"),
+      resolve("./pagesA/**/*.{vue,js,ts,jsx,tsx,wxml}"),
+      resolve("./pagesB/**/*.{vue,js,ts,jsx,tsx,wxml}"),
     ],
   },
   darkMode: false, // or 'media' or 'class'
