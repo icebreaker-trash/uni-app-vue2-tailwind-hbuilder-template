@@ -4,7 +4,7 @@ if (process.env.NODE_ENV === "development") {
 const { WeappTailwindcssDisabled } = require("./platform");
 
 const {
-  UniAppWeappTailwindcssWebpackPluginV4,
+  UniAppWeappTailwindcssWebpackPluginV5,
 } = require("weapp-tailwindcss-webpack-plugin");
 
 /**
@@ -14,8 +14,9 @@ const config = {
   //....
   configureWebpack: {
     plugins: [
-      new UniAppWeappTailwindcssWebpackPluginV4({
+      new UniAppWeappTailwindcssWebpackPluginV5({
         disabled: WeappTailwindcssDisabled,
+        customReplaceDictionary: 'simple'
       }),
     ],
   },
