@@ -10,14 +10,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@dcloudio/uni-cli-i18n": "^2.0.1-36420220922003",
-    "@dcloudio/uni-cli-shared": "^2.0.1-36420220922003",
-    "@dcloudio/vue-cli-plugin-uni": "^2.0.1-36420220922003",
+    "@dcloudio/uni-cli-i18n": "^2.0.2-3061820230117003",
+    "@dcloudio/uni-cli-shared": "^2.0.2-3061820230117003",
+    "@dcloudio/vue-cli-plugin-uni": "^2.0.2-3061820230117003",
     "autoprefixer": "9",
     "postcss": "7",
     "postcss-rem-to-responsive-pixel": "^5.1.3",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
-    "weapp-tailwindcss-webpack-plugin": "^1.11.6",
+    "weapp-tailwindcss-webpack-plugin": "^1.12.8",
     "webpack": "npm:webpack@webpack-4"
   }
 }

@@ -2,7 +2,8 @@
 
 const path = require("path");
 const {
-	WeappTailwindcssDisabled
+	WeappTailwindcssDisabled,
+	isWeapp
 } = require("./platform");
 
 module.exports = {
@@ -15,12 +16,13 @@ module.exports = {
 		}),
 		// rem 转 rpx
 		WeappTailwindcssDisabled ?
-		undefined :
-		require("postcss-rem-to-responsive-pixel/postcss7")({
-			rootValue: 32,
-			propList: ["*"],
-			transformUnit: "rpx",
-		}),
+			undefined :
+			require("postcss-rem-to-responsive-pixel/postcss7")({
+				rootValue: 32,
+				propList: ["*"],
+				transformUnit: "rpx",
+				replace: isWeapp
+			}),
 		WeappTailwindcssDisabled ? require('@dcloudio/vue-cli-plugin-uni/packages/postcss') : undefined
 	],
 };
