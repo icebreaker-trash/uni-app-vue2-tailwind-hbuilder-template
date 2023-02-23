@@ -21,6 +21,12 @@
 
 先在项目目录下，执行 `yarn` 进行安装，然后在 `hbuilderx` 中打开项目，进行运行和发布。
 
+## 注意！！！
+
+在项目里面添加目录，在里面写 `.vue` 文件的时候，记得更新 `tailwind.config.js` 的 `content` 数组，把新的目录包裹进去。不然 `tailwindcss` 是不会生成添加的目录里面的 `class` 的！
+
+比如你添加一个 `components` 文件夹，你就在 `content` 加入 `resolve("./components/**/*.{vue,js,ts,jsx,tsx,wxml}"),`, 小程序分包同理。
+
 ## 从 0 到 1 的搭建过程
 
 ### 新建一个`uni-app`项目
