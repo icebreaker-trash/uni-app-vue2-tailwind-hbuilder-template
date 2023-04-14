@@ -1,19 +1,22 @@
 # uni-app-vue2-tailwind-hbuilder-template
 
+注意(重要)：此版本由于目前 hbuilderX 含(alpha)版本，针对 `webpack` 打包的项目，只能使用 `postcss7` 无法使用最新的 `postcss8`，导致这个模板只能使用 `tailwindcss v2`，相比 `tailwindcss v3`，失去了许多的功能特性。所以建议你使用:
+
+- vue3 vite vscode模板 [uni-app-vite-vue3-tailwind-vscode-template](https://github.com/sonofmagic/uni-app-vite-vue3-tailwind-vscode-template)  
+- vue2 vscode模板 [uni-app-vue2-tailwind-vscode-template](https://github.com/sonofmagic/uni-app-vue2-tailwind-vscode-template)
+- vue3 HbuilderX[uni-app-vue3-tailwind-hbuilder-template](https://github.com/sonofmagic/uni-app-vue3-tailwind-hbuilder-template)
+
 - [uni-app-vue2-tailwind-hbuilder-template](#uni-app-vue2-tailwind-hbuilder-template)
+  - [模板介绍](#模板介绍)
   - [使用方式](#使用方式)
-  - [从 0 到 1 的搭建过程](#从-0-到-1-的搭建过程)
-    - [新建一个`uni-app`项目](#新建一个uni-app项目)
-    - [添加 `postcss.config.js`](#添加-postcssconfigjs)
-    - [添加 `tailwind.config.js`](#添加-tailwindconfigjs)
-    - [在 `App.vue` 中引入 `tailwindcss`](#在-appvue-中引入-tailwindcss)
+  - [注意](#注意)
   - [HbuilderX 智能提示工具](#hbuilderx-智能提示工具)
   - [Related projects](#related-projects)
     - [插件核心](#插件核心)
     - [CLI 工具](#cli-工具)
     - [模板 template](#模板-template)
     - [预设 tailwindcss preset](#预设-tailwindcss-preset)
-  - [Bugs & Issues](#bugs--issues)
+  - [Bugs \& Issues](#bugs--issues)
 
 这是一个使用 `hbuilderx` + `uni-app` + `vue2` + `tailwind` 构建的小程序模板。可以直接在 `hbuilderx` 中导入运行。
 
@@ -21,151 +24,11 @@
 
 先在项目目录下，执行 `yarn` 进行安装，然后在 `hbuilderx` 中打开项目，进行运行和发布。
 
-## 注意！！！
+## 注意
 
 在项目里面添加目录，在里面写 `.vue` 文件的时候，记得更新 `tailwind.config.js` 的 `content` 数组，把新的目录包裹进去。不然 `tailwindcss` 是不会生成添加的目录里面的 `class` 的！
 
 比如你添加一个 `components` 文件夹，你就在 `content` 加入 `resolve("./components/**/*.{vue,js,ts,jsx,tsx,wxml}"),`, 小程序分包同理。
-
-## 从 0 到 1 的搭建过程
-
-### 新建一个`uni-app`项目
-
-在这个项目里，添加 `.gitignore`,`package.json`,`vue.config.js` 文件
-
-`.gitignore` 中，把 `node_modules`,`unpackage`,`.hbuilderx` 这一类不像被添加到 `git` 的添加进去。
-
-```txt
-unpackage
-node_modules
-.hbuilderx
-```
-
-然后我们 `npm init -y` 在项目根目录创建一个 `package.json`，并安装依赖：
-
-```json
-{
-  "devDependencies": {
-    "autoprefixer": "9",
-    "postcss": "7",
-    "postcss-rem-to-responsive-pixel": "^5.1.3",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
-    "weapp-tailwindcss-webpack-plugin": "^1.6.8",
-    "webpack": "npm:webpack@webpack-4"
-  }
-}
-
-```
-
-> 这是一个 `vue2` 项目，所以这样安装，`vue3` 使用 `vite/webpack` 的有所不同。
-
-然后添加 `vue.config.js` 文件，注册 `weapp-tailwindcss-webpack-plugin`:
-
-```js
-// 为了 tailwindcss jit 开发时的热更新
-if (process.env.NODE_ENV === "development") {
-  process.env.TAILWIND_MODE = "watch";
-}
-
-const isH5 = process.env.UNI_PLATFORM === "h5";
-const isApp = process.env.UNI_PLATFORM === "app";
-
-const WeappTailwindcssDisabled = isH5 || isApp;
-
-const {
-  UniAppWeappTailwindcssWebpackPluginV4,
-} = require("weapp-tailwindcss-webpack-plugin");
-
-/**
- * @type {import('@vue/cli-service').ProjectOptions}
- */
-const config = {
-  //....
-  configureWebpack: {
-    plugins: [
-      new UniAppWeappTailwindcssWebpackPluginV4({
-        disabled: WeappTailwindcssDisabled,
-      }),
-    ],
-  },
-  //....
-};
-
-module.exports = config;
-```
-
-### 添加 `postcss.config.js`
-
-这里我们和 `uni-app` 的 `cli` 项目保持一致，以免在 `merge options` 时遇到未知问题。(如果有更好的方法，欢迎提供建议)
-
-```js
-const path = require("path");
-
-module.exports = {
-  plugins: [
-    require("autoprefixer")({
-      remove: process.env.UNI_PLATFORM !== "h5",
-    }),
-    require("tailwindcss")({
-      config: path.resolve(__dirname, "./tailwind.config.js"),
-    }),
-    // rem 转 rpx
-    require("postcss-rem-to-responsive-pixel/postcss7")({
-      rootValue: 32,
-      propList: ["*"],
-      transformUnit: "rpx",
-    }),
-  ],
-};
-```
-
-这里特别注意，在声明所有路径时，必须声明为绝对路径!!!
-
-因为 `hbuilderx` 有这样一个读取配置的策略：如果目标目录是相对路径，就会读取 `'\HBuilderX\plugins\uniapp-cli\'` 目录下的文件，这直接导致配置找不到，导致项目无法启动。
-
-### 添加 `tailwind.config.js`
-
-```js
-const path = require("path");
-const resolve = (p) => {
-  return path.resolve(__dirname, p);
-};
-// https://github.com/sonofmagic/weapp-tailwindcss-webpack-plugin/blob/main/demo/uni-app/tailwind.config.js
-/** @type {import('@types/tailwindcss/tailwind-config').TailwindConfig} */
-module.exports = {
-  mode: "jit",
-  purge: {
-    content: [
-      resolve("./index.html"),
-      resolve("./pages/**/*.{vue,js,ts,jsx,tsx,wxml}"),
-    ],
-  },
-  darkMode: false, // or 'media' or 'class'
-  theme: {
-    extend: {},
-  },
-  variants: {},
-  plugins: [],
-  corePlugins: {
-    preflight: false,
-  },
-};
-
-```
-
-同样，`content` 也必须为绝对路径。
-
-### 在 `App.vue` 中引入 `tailwindcss`
-
-```html
-<style lang="scss">
-/*每个页面公共css */
-@import "tailwindcss/base";
-@import "tailwindcss/utilities";
-</style>
-```
-
-现在，你就可以在 `hbuilder` 中愉快的使用 `tailwindcss` 了！
 
 ## HbuilderX 智能提示工具
 
