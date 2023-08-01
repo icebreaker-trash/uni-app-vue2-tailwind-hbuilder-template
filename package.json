@@ -5,7 +5,11 @@
     "scripts": {},
     "dependencies": {},
     "devDependencies": {
+        "@dcloudio/uni-cli-i18n": "^2.0.2-alpha-3081220230731001",
+        "@dcloudio/uni-cli-shared": "^2.0.2-alpha-3081220230731001",
+        "@dcloudio/vue-cli-plugin-uni": "^2.0.2-alpha-3081120230718001",
         "autoprefixer": "^10.4.14",
+        "postcss": "^8.4.27",
         "postcss-comment": "^2.0.0",
         "postcss-import": "^15.1.0",
         "webpack": "^5.88.2"
