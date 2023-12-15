@@ -1,6 +1,6 @@
 <template>
 	<view class="w-screen flex flex-col items-center">
-		<image class="w-12 h-12" src="../../static/logo.png"></image>
+		<image class="w-20 h-[109px]" src="../../static/logo.png"></image>
 		<navigator url="/pagesA/index">pagesA</navigator>
 		<navigator url="/pagesB/index">pagesB</navigator>
 		<view>
