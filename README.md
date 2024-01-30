@@ -1,5 +1,11 @@
 # uni-app-vue2-tailwind-hbuilder-template
 
+> 由于hbuilderx更新之后，它和tailwindcss v2的热更新产生了冲突，导致了 [#9](https://github.com/sonofmagic/uni-app-vue2-tailwind-hbuilder-template/issues/9) 这个问题。
+>
+> 想要绕过，你可以使用 vue3 版本，或者使用 vue2 的 cli 版本,它们都可以使用最新的 tailwindcss v3 版本！
+>
+> 此版本废弃！！
+
 注意(重要)：此版本由于目前 hbuilderX 含(alpha)版本，针对 `webpack` 打包的项目，只能使用 `postcss7` 无法使用最新的 `postcss8`，导致这个模板只能使用 `tailwindcss v2`，相比 `tailwindcss v3`，失去了许多的功能特性。所以建议你使用:
 
 - vue3 vite vscode模板 [uni-app-vite-vue3-tailwind-vscode-template](https://github.com/sonofmagic/uni-app-vite-vue3-tailwind-vscode-template)  
