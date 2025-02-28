@@ -4,14 +4,14 @@
 		<navigator url="/pagesA/index">pagesA</navigator>
 		<navigator url="/pagesB/index">pagesB</navigator>
 		<view>
-			<text class="text-[24px] text-gray-800">{{title}} World</text>
+			<text class="text-[24px] text-gray-800">{{ title }} World</text>
 		</view>
 		<view :class="[
-      flag?'bg-red-900':'bg-[#fafa00]',
-      ]">Toggle</view>
+			flag ? 'bg-red-900' : 'bg-[#fafa00]',
+		]">Toggle</view>
 		<view :class="{
-        'bg-[#fafa00]':flag===true,
-      }">Toggle</view>
+			'bg-[#fafa00]': flag === true,
+		}">Toggle</view>
 		<view class="p-[20px] -mt-2 mb-[-20px] ">p-[20px] -mt-2 mb-[-20px] margin的jit 不能这么写 -m-[20px]</view>
 		<view class="space-y-[1.6rem]">
 			<view class="w-[300rpx] text-black text-opacity-[0.19]">w-[300rpx] text-black text-opacity-[0.19]</view>
@@ -36,41 +36,16 @@
 </template>
 
 <script>
-	import Vue from "vue";
+import Vue from "vue";
 
-	export default Vue.extend({
-		data() {
-			return {
-				title: "Hello",
-				flag: true,
-			};
-		},
-		onLoad() {},
-		methods: {},
-	});
+export default Vue.extend({
+	data() {
+		return {
+			title: "Hello",
+			flag: true,
+		};
+	},
+	onLoad() { },
+	methods: {},
+});
 </script>
-
-<style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin: 200rpx auto 50rpx auto;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
-</style>
