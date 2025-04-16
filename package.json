@@ -8,13 +8,13 @@
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
-		"@dcloudio/uni-cli-i18n": "2.0.2-3090820231124001",
-		"@dcloudio/uni-cli-shared": "2.0.2-3090820231124001",
-		"@dcloudio/vue-cli-plugin-uni": "2.0.2-3090820231124001",
-		"dotenv": "^16.3.1",
+		"@dcloudio/uni-cli-i18n": "2.0.2-4050720250324001",
+		"@dcloudio/uni-cli-shared": "2.0.2-4050720250324001",
+		"@dcloudio/vue-cli-plugin-uni": "2.0.2-4050720250324001",
+		"dotenv": "^16.5.0",
 		"postcss": "7",
 		"tailwindcss": "npm:@tailwindcss/postcss7-compat",
-		"weapp-tailwindcss": "^4.0.8",
+		"weapp-tailwindcss": "^4.1.5",
 		"webpack": "npm:webpack@webpack-4"
 	},
 	"uni-app": {
