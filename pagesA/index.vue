@@ -1,5 +1,5 @@
 <template>
-    <div class="text-[#654321]">
+    <div class="bg-[#654321] text-white">
         pageA
     </div>
 </template>

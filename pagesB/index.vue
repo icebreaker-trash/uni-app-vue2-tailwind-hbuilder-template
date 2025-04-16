@@ -1,5 +1,5 @@
 <template>
-    <div class="text-[#123456]">
+    <div class="bg-[#123456] text-white">
         pageB
     </div>
 </template>
